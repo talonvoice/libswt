@@ -16,7 +16,9 @@
 #include <float.h>
 #include <math.h>
 #include <assert.h>
-#if !defined(__OpenBSD__) && !defined(__FreeBSD__)
+#if defined(_MSC_VER) || defined(__MINGW32__)
+#include <malloc.h>
+#elif !defined(__OpenBSD__) && !defined(__FreeBSD__)
 #include <alloca.h>
 #endif
 
